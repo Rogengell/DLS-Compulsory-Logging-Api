@@ -15,9 +15,5 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.2" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\packages\MessageClient\MessageClient.csproj" />
-    <ProjectReference Include="..\..\packages\Messages\Messages.csproj" />
-  </ItemGroup>
 
 </Project>
