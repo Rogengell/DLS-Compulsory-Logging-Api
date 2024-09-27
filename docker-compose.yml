@@ -1,12 +1,11 @@
 services:
   logging-db:
-    image: mcr.microsoft.com/azure-sql-edge:latest
+    image: mcr.microsoft.com/mssql/server:2022-latest
     environment:
       MSSQL_SA_PASSWORD: "SuperSecret7!"
       ACCEPT_EULA: "Y"
     volumes:
       - mssql-logging:/var/opt/mssql
-      - ./my.cnf:/etc/mysql/my.cnf
     ports:
       - "1433:1433"
 
