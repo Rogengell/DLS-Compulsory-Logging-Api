@@ -1,35 +1,6 @@
 version: '3.4'
 
 services:
-  seq:
-    image: datalust/seq
-    ports:
-      - 5341:5341
-      - 5342:80
-    volumes:
-      - rps_seq_data:/data
-    environment:
-      - ACCEPT_EULA=Y
-  zipkin:
-    image: openzipkin/zipkin
-    ports:
-      - 9411:9411
-  rmq:
-    image: rabbitmq:management
-    ports:
-      - 5672:5672
-      - 15672:15672
-    environment:
-      - RABBITMQ_DEFAULT_USER=application
-      - RABBITMQ_DEFAULT_PASS=pepsi
-  
-  healthapploginservice:
-    container_name: helath_app_login_service
-    build:
-        context: .
-        dockerfile: Health App Login/Dockerfile
-    networks:
-        - microservices_net
   healthappapi:
     build:
       context: .
@@ -38,6 +9,7 @@ services:
       replicas: 2
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      
   nginx:
     image: nginx
     ports:
