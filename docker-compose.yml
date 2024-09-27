@@ -1,27 +1,35 @@
-version: '3.4'
-
 services:
-  healthappapi:
+  logging-db:
+    image: mcr.microsoft.com/azure-sql-edge:latest
+    environment:
+      MSSQL_SA_PASSWORD: "SuperSecret7!"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - mssql-logging:/var/opt/mssql
+      - ./my.cnf:/etc/mysql/my.cnf
+    ports:
+      - "1433:1433"
+
+  loggingapi:
     build:
       context: .
-      dockerfile: Health App Api/Dockerfile
+      dockerfile: LoggingApi/Dockerfile
     deploy:
-      replicas: 2
+      replicas: 1
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      
+    depends_on:
+      logging-db:
+        condition: service_started
+
   nginx:
     image: nginx
     ports:
       - "80:80"
     depends_on:
-      - healthappapi
+      - loggingapi
     volumes:
      - ./nginx.conf:/etc/nginx/nginx.conf
 
-networks:
-    microservices_net:
-        external: true
-
 volumes:
-  rps_seq_data:
+  mssql-logging:
