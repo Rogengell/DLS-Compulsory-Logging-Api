@@ -21,7 +21,7 @@ namespace LoggingApi.Service
         {
             try
             {
-                _context.logging.Add(loggingObject);
+                _context.logging!.Add(loggingObject);
                 await _context.SaveChangesAsync();
                 return true;
             }
@@ -29,7 +29,6 @@ namespace LoggingApi.Service
             {
                 Console.WriteLine(ex.Message);
                 return false;
-                throw;
             }
         }
     }

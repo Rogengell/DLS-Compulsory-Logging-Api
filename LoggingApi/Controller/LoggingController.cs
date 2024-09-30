@@ -33,11 +33,11 @@ public class LoggingController : Controller
         {
             var logging = new Logging
             {
-                TraceId = (int)req.TraceId,
-                SpanId = (int)req.SpanId,
+                TraceId = (int)req.TraceId!,
+                SpanId = (int)req.SpanId!,
                 ParentSpanId = req.ParentSpanId,
                 LoggingString = req.LoggingString,
-                Time = (DateTime)req.Time,
+                Time = (DateTime)req.Time!,
             };
 
             var status = await _service.CreateLogging(logging);
