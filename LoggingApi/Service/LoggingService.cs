@@ -17,19 +17,11 @@ namespace LoggingApi.Service
             _context = context;
         }
 
-        public async Task<Boolean> CreateLogging(loggingRequest loggingRequest)
+        public async Task<Boolean> CreateLogging(Logging loggingObject)
         {
             try
             {
-                var req = new Logging
-                {
-                    TraceId = loggingRequest.TraceId,
-                    SpanId = loggingRequest.SpanId,
-                    ParentSpanId = loggingRequest.ParentSpanId,
-                    LoggingString = loggingRequest.LoggingString,
-                    Time = loggingRequest.Time,
-                };
-                _context.logging.Add(req);
+                _context.logging.Add(loggingObject);
                 await _context.SaveChangesAsync();
                 return true;
             }

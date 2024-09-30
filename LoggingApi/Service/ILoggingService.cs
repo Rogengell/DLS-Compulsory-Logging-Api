@@ -1,4 +1,6 @@
+using Model;
+
 public interface ILoggingService
 {
-    Task<Boolean> CreateLogging(loggingRequest loggingRequest);
+    Task<Boolean> CreateLogging(Logging loggingObject);
 }
