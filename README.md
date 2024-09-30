@@ -2,35 +2,41 @@
 
 ## **C4 Model** :pencil2:
 
-![FullC4Model](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Images/C4Model.png)
+![FullC4Model](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Diagrams/C4Model.png)
 
 Her a link to our [project](https://www.figma.com/board/892iLuWnOICp8H1fiWFxyl/DLS-Compulsory?node-id=38-425&node-type=section&t=nANISoYMvT7RMDkZ-0) in Figma for a closer look
 
 ### **Level 1** :bricks:
 
-![LVL1](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Images/Level%201%20Monetoring%20System%20context%20diagram.png)
+![LVL1](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Diagrams/Level%201%20Monetoring%20System%20context%20diagram.png)
 
 ### **Level 2** :hammer:
 
-![LVL2](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Images/Level%202%20Container%20diagram%20Monetoring%20System.png)
+![LVL2](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Diagrams/Level%202%20Container%20diagram%20Monetoring%20System.png)
 
 ### **Level 3** :wrench:
 
 #### Logging Api :goal_net:
 
-![LVL3Logging](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Images/Level%203%20Components%20diagram%20-%20Logging%20API.png)
+![LVL3Logging](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Diagrams/Level%203%20Components%20diagram%20-%20Logging%20API.png)
 
 #### Tracing Api
 
-![LVL3Tracing](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Images/Level%203%20Components%20diagram%20-%20Tracing%20API.png)
+![LVL3Tracing](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Diagrams/Level%203%20Components%20diagram%20-%20Tracing%20API.png)
 
 #### Monitoring WebApp
 
-![LVL3WebApp](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Images/Level%203%20Components%20diagram%20-%20Monitoring%20WebApp.png)
+![LVL3WebApp](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Diagrams/Level%203%20Components%20diagram%20-%20Monitoring%20WebApp.png)
 
 #### Monitoring Api
 
-![LVL3Monitoring](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Images/Level%203%20Components%20diagram%20-%20Monitoring%20API.png)
+![LVL3Monitoring](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Diagrams/Level%203%20Components%20diagram%20-%20Monitoring%20API.png)
+
+## **Code**
+
+- restAPI
+- dependency injection
+- nginx
 
 ## **Setup Monitoring Programm** :rocket:
 
@@ -45,3 +51,11 @@ for running migration pls run this command
 ```
 dotnet tool install --global dotnet-ef
 ```
+
+```
+docker compose up
+```
+
+after that you can tryout via swagger and input some loggings to the database
+open your browser and type
+**localhost/swagger**
