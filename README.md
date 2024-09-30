@@ -4,7 +4,7 @@
 
 ![FullC4Model](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Images/C4Model.png)
 
-Her a figma to our **[project]**(https://www.figma.com/board/892iLuWnOICp8H1fiWFxyl/DLS-Compulsory?node-id=38-425&node-type=section&t=nANISoYMvT7RMDkZ-0)
+Her a figma to our [project](https://www.figma.com/board/892iLuWnOICp8H1fiWFxyl/DLS-Compulsory?node-id=38-425&node-type=section&t=nANISoYMvT7RMDkZ-0)
 
 ### **Level 1** :bricks:
 
