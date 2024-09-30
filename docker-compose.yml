@@ -14,7 +14,7 @@ services:
       context: .
       dockerfile: LoggingApi/Dockerfile
     deploy:
-      replicas: 1
+      replicas: 2
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     depends_on:
