@@ -18,6 +18,7 @@ public class LoggingController : Controller
     {
         _service = service;
     }
+    
     [HttpPut("Logging")]
     public async Task<IActionResult> CreateLogging([FromBody] loggingRequest req)
     {
@@ -39,7 +40,6 @@ public class LoggingController : Controller
         {
             Console.WriteLine("Something went wrong createing the logging" + ex.Message);
             return BadRequest(new { message = ex.Message });
-            throw;
         }
     }
 }

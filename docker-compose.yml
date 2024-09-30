@@ -28,7 +28,7 @@ services:
     depends_on:
       - loggingapi
     volumes:
-     - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx.conf:/etc/nginx/nginx.conf
 
 volumes:
   mssql-logging:
