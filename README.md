@@ -1,13 +1,18 @@
 # **DLS Compulsory** :monocle_face:
 
+## Introduction
+In our system, we are primarily focused on the logging aspect. If we align this with the 'Design to be monitored' framework, our focus would be more on the middle level of the image. This is because we are prioritizing the identification of 'where' the problems are occurring, and logging data is essential for this task.
+
 ## **C4 Model** :pencil2:
+This document provides a comprehensive C4 model breakdown of a monitoring system, detailing its architecture down to the third level. It outlines a blueprint for implementing and integrating such a system into any system requiring monitoring capabilities
 
 ![FullC4Model](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Diagrams/C4Model.png)
 
 Her a link to our [project](https://www.figma.com/board/892iLuWnOICp8H1fiWFxyl/DLS-Compulsory?node-id=38-425&node-type=section&t=nANISoYMvT7RMDkZ-0) in Figma for a closer look
 
 ### **Level 1** :bricks:
-
+This image is a context diagram that illustrates the relationship between a monitoring user, a monitoring system, and any other system that might be monitored.
+wrong image!!!!!!!!!!!
 ![LVL1](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Diagrams/Level%201%20Monetoring%20System%20context%20diagram.png)
 
 ### **Level 2** :hammer:
