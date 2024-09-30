@@ -1,9 +1,13 @@
+using LoggingApi.Service;
 using Microsoft.EntityFrameworkCore;
+using Model;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<LoggingApi.Data.LADbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<ILoggingService, LoggingService>();
 
 builder.Services.AddControllers();
 

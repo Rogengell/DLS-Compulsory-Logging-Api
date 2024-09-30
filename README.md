@@ -4,7 +4,7 @@
 
 ![FullC4Model](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Images/C4Model.png)
 
-Her a figma to our [project](https://www.figma.com/board/892iLuWnOICp8H1fiWFxyl/DLS-Compulsory?node-id=38-425&node-type=section&t=nANISoYMvT7RMDkZ-0)
+Her a link to our [project](https://www.figma.com/board/892iLuWnOICp8H1fiWFxyl/DLS-Compulsory?node-id=38-425&node-type=section&t=nANISoYMvT7RMDkZ-0) in Figma for a closer look
 
 ### **Level 1** :bricks:
 
@@ -33,3 +33,15 @@ Her a figma to our [project](https://www.figma.com/board/892iLuWnOICp8H1fiWFxyl/
 ![LVL3Monitoring](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Images/Level%203%20Components%20diagram%20-%20Monitoring%20API.png)
 
 ## **Setup Monitoring Programm** :rocket:
+
+make sure that all .NET Core frameworks are up to date, for at get a list of all tools, run this command
+
+```
+dotnet tool list -g
+```
+
+for running migration pls run this command
+
+```
+dotnet tool install --global dotnet-ef
+```
