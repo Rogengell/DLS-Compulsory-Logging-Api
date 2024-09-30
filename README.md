@@ -58,4 +58,7 @@ docker compose up
 
 after that you can tryout via swagger and input some loggings to the database
 open your browser and type
-**localhost/swagger**
+
+```
+localhost/swagger
+```
