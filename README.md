@@ -41,7 +41,7 @@ wrong image!!!!!!!!!!!
 
 - restAPI
 - dependency injection
-- nginx
+- We are using Nginx, because it is a valuable tool for horizontal scaling in Docker environments, providing load balancing, performance optimization, and fault tolerance.
 
 ## **Setup Monitoring Programm** :rocket:
 
