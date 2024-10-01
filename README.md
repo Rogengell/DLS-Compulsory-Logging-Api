@@ -16,9 +16,12 @@ Her a link to our [project](https://www.figma.com/board/892iLuWnOICp8H1fiWFxyl/D
 
 This image is a context diagram that illustrates the relationship between a monitoring user, a monitoring system, and any other system that might be monitored.
 wrong image!!!!!!!!!!!
+
 ![LVL1](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Diagrams/Level%201%20Monetoring%20System%20context%20diagram.png)
 
 ### **Level 2** :hammer:
+
+The diagram shows the relationships between these components and the data flow between them. For example, the monitoring user interacts with the monitoring web app, which in turn queries the monitoring database to retrieve monitoring data. The logging and tracing APIs collect data from the monitored systems and store it in the database.
 
 ![LVL2](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Diagrams/Level%202%20Container%20diagram%20Monetoring%20System.png)
 
@@ -45,7 +48,6 @@ wrong image!!!!!!!!!!!
 - restAPI
 - dependency injection
 - We are using Nginx, because it is a valuable tool for horizontal scaling in Docker environments, providing load balancing, performance optimization, and fault tolerance.
-- nginx
 
 ## **Setup Monitoring Programm** :rocket:
 
