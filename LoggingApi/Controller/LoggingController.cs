@@ -27,31 +27,30 @@ public class LoggingController : Controller
         Console.WriteLine(ModelState.IsValid);
         if (!ModelState.IsValid)
         {
-            return BadRequest(ModelState);
+            return StatusCode(400,"Bad Request");
         }
         try
         {
             var logging = new Logging
             {
                 TraceId = (int)req.TraceId!,
-                SpanId = (int)req.SpanId!,
                 ParentSpanId = req.ParentSpanId,
                 LoggingString = req.LoggingString,
-                Time = (DateTime)req.Time!,
+                Time = req.Time ?? DateTime.Now
             };
 
             var status = await _service.CreateLogging(logging);
 
-            if (!status)
-                return BadRequest("failed to write");
+            if (status._Status == 400)
+                return StatusCode(400,status._responceMessage);
 
             Console.WriteLine("Create Logging");
-            return Ok("Logging Created");
+            return StatusCode(200,status);
         }
         catch (System.Exception ex)
         {
             Console.WriteLine("Something went wrong createing the logging" + ex.Message);
-            return BadRequest(new { message = ex.Message });
+            return StatusCode(400,ex.Message);
         }
     }
 }

@@ -8,6 +8,12 @@ services:
       - mssql-logging:/var/opt/mssql
     ports:
       - "1433:1433"
+    healthcheck:
+      test: [ "CMD-SHELL", "pgrep sqlservr" ]
+      interval: 10s
+      retries: 5
+      start_period: 60s
+      timeout: 5s
 
   loggingapi:
     build:
@@ -18,8 +24,8 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     depends_on:
-      logging-db:
-        condition: service_started
+      migration_service:
+        condition: service_completed_successfully
 
   nginx:
     image: nginx
@@ -29,6 +35,16 @@ services:
       - loggingapi
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
+
+  
+  # Esben and Asbjørn fandt ud af dette
+  migration_service:
+    build:
+      context: .
+      dockerfile: LoggingApi/Migrations.Dockerfile
+    depends_on:
+      logging-db:
+        condition: service_healthy
 
 volumes:
   mssql-logging:

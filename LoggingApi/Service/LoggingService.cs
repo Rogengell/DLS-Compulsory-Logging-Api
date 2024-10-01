@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using LoggingApi.Data;
+using LoggingApi.Request_Responce;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Model;
@@ -17,18 +18,19 @@ namespace LoggingApi.Service
             _context = context;
         }
 
-        public async Task<Boolean> CreateLogging(Logging loggingObject)
+        public async Task<loggingResponse> CreateLogging(Logging loggingObject)
         {
             try
             {
                 _context.logging!.Add(loggingObject);
                 await _context.SaveChangesAsync();
-                return true;
+
+                return new loggingResponse(200, "Success", loggingObject.SpanId);;
             }
             catch (System.Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                return false;
+                return new loggingResponse(400, ex.Message);
             }
         }
     }

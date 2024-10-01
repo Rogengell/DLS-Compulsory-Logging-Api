@@ -1,6 +1,7 @@
+using LoggingApi.Request_Responce;
 using Model;
 
 public interface ILoggingService
 {
-    Task<Boolean> CreateLogging(Logging loggingObject);
+    Task<loggingResponse> CreateLogging(Logging loggingObject);
 }
