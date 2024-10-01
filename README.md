@@ -15,7 +15,6 @@ Her a link to our [project](https://www.figma.com/board/892iLuWnOICp8H1fiWFxyl/D
 ### **Level 1** :bricks:
 
 This image is a context diagram that illustrates the relationship between a monitoring user, a monitoring system, and any other system that might be monitored.
-wrong image!!!!!!!!!!!
 
 ![LVL1](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Diagrams/Level%201%20Monetoring%20System%20context%20diagram.png)
 
@@ -29,25 +28,38 @@ The diagram shows the relationships between these components and the data flow b
 
 #### Logging Api :goal_net:
 
+The Logging API receives data from "Any System", processes it using the Logging Service Component, and stores it in the Logging Database. The Logging Distributor then distributes the logging data to other components in the monitoring system.Logging Distributor is to ensure that the logging data is delivered to the appropriate components where it can be used for analysis, monitoring, or other purposes.
+
 ![LVL3Logging](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Diagrams/Level%203%20Components%20diagram%20-%20Logging%20API.png)
 
 #### Tracing Api
+
+The Tracing API gathers information from the system being monitored. This data is then analyzed and processed by a specialized component. The processed information is stored in a database for later reference. Finally, this data is shared with other parts of the monitoring system.
 
 ![LVL3Tracing](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Diagrams/Level%203%20Components%20diagram%20-%20Tracing%20API.png)
 
 #### Monitoring WebApp
 
+The Monitoring WebApp as a bridge between the user and the monitored system. The Monitoring View is the user interface that displays relevant data. The Monitoring Controller acts as the middleman, receiving user input and sending it to the backend (the Monitoring API) to fetch and update data. The Monitoring Model represents the data structure used to store and manipulate the information displayed in the view.
+
 ![LVL3WebApp](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Diagrams/Level%203%20Components%20diagram%20-%20Monitoring%20WebApp.png)
 
 #### Monitoring Api
+
+The Monitoring View shows users the data they need. The Monitoring Controller acts as the gatekeeper, receiving user requests and deciding what to do. The Monitoring Service Component is the worker behind the scenes, fetching data from or sending updates to the database. The Monitoring Database stores all the information about the system being monitored.
 
 ![LVL3Monitoring](https://github.com/Rogengell/DLS-Compulsory-Health-App-Api/blob/main/Diagrams/Level%203%20Components%20diagram%20-%20Monitoring%20API.png)
 
 ## **Code**
 
-- restAPI
-- dependency injection
-- We are using Nginx, because it is a valuable tool for horizontal scaling in Docker environments, providing load balancing, performance optimization, and fault tolerance.
+**RestAPI**
+By using a rest API, we will be able to create a more modular, scalable and flexible Monitoring System that is easier to maintain and extend
+
+**Dependency Injection**
+Dependency injection helps organize our code by specifying which services can access other services they need to do their jobs. This makes our code more flexible, maintainable, and easier to test.
+
+**Nginx**
+We are using Nginx, because it is a valuable tool for horizontal scaling in Docker environments, providing load balancing, performance optimization, and fault tolerance.
 
 ## **Setup Monitoring Programm** :rocket:
 
@@ -70,6 +82,4 @@ docker compose up
 after that you can tryout via swagger and input some loggings to the database
 open your browser and type
 
-```
 localhost/swagger
-```
