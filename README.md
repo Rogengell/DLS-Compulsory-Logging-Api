@@ -64,7 +64,8 @@ We are using Nginx, because it is a valuable tool for horizontal scaling in Dock
 ## **Setup Logging API** :rocket:
 
 :rotating_light: Before running docker compose up please check if in the file **run-ef-database-update.sh** the **Line Sequence** is set to **LF** and not to **CRLF**. :rotating_light:
-After that you can run this command:
+
+After that you can run this command
 
 ```
 docker compose up
