@@ -11,11 +11,14 @@ namespace Model
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-        public int TraceId { get; set; }
         public int SpanId { get; set; }
+        public int TraceId { get; set; }
         public int? ParentSpanId { get; set; }
         public string? LoggingString { get; set; }
         public DateTime Time { get; set; }
+
+
+        [ForeignKey("ParentSpanId")]
+        public virtual Logging? Parent { get; set; }
     }
 }

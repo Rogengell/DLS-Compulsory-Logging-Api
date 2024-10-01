@@ -24,19 +24,16 @@ namespace LoggingApi.Migrations
 
             modelBuilder.Entity("Model.Logging", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("SpanId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SpanId"));
 
                     b.Property<string>("LoggingString")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("ParentSpanId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SpanId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("Time")
@@ -45,9 +42,20 @@ namespace LoggingApi.Migrations
                     b.Property<int>("TraceId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.HasKey("SpanId");
+
+                    b.HasIndex("ParentSpanId");
 
                     b.ToTable("logging");
+                });
+
+            modelBuilder.Entity("Model.Logging", b =>
+                {
+                    b.HasOne("Model.Logging", "Parent")
+                        .WithMany()
+                        .HasForeignKey("ParentSpanId");
+
+                    b.Navigation("Parent");
                 });
 #pragma warning restore 612, 618
         }
