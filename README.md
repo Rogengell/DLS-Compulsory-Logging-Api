@@ -61,19 +61,10 @@ Dependency injection helps organize our code by specifying which services can ac
 **Nginx:**
 We are using Nginx, because it is a valuable tool for horizontal scaling in Docker environments, providing load balancing, performance optimization, and fault tolerance.
 
-## **Setup Monitoring Programm** :rocket:
+## **Setup Logging API** :rocket:
 
-make sure that all .NET Core frameworks are up to date, for at get a list of all tools, run this command
-
-```
-dotnet tool list -g
-```
-
-for running migration pls run this command
-
-```
-dotnet tool install --global dotnet-ef
-```
+:rotating_light: Before running docker compose up please check if in the file **run-ef-database-update.sh** the **Line Sequence** is set to **LF** and not to **CRLF**. :rotating_light:
+After that you can run this command:
 
 ```
 docker compose up
