@@ -52,13 +52,13 @@ The Monitoring View shows users the data they need. The Monitoring Controller ac
 
 ## **Code**
 
-**RestAPI**
+**RestAPI:**
 By using a rest API, we will be able to create a more modular, scalable and flexible Monitoring System that is easier to maintain and extend
 
-**Dependency Injection**
+**Dependency Injection:**
 Dependency injection helps organize our code by specifying which services can access other services they need to do their jobs. This makes our code more flexible, maintainable, and easier to test.
 
-**Nginx**
+**Nginx:**
 We are using Nginx, because it is a valuable tool for horizontal scaling in Docker environments, providing load balancing, performance optimization, and fault tolerance.
 
 ## **Setup Monitoring Programm** :rocket:
