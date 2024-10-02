@@ -28,7 +28,7 @@ The diagram shows the relationships between these components and the data flow b
 
 #### Logging Api :goal_net:
 
-The Logging API receives data from "Any System", processes it using the Logging Service Component, and stores it in the Logging Database. The Logging Distributor then distributes the logging data to other components in the monitoring system.Logging Distributor is to ensure that the logging data is delivered to the appropriate components where it can be used for analysis, monitoring, or other purposes.
+The Logging API receives data from "Any System",it is than using the Logging Service Component, and stores it in the Logging Database. The Logging Distributor then distributes the logging data to other components in the monitoring system.Logging Distributor is to ensure that the logging data is delivered to the appropriate components where it can be used for analysis, monitoring, or other purposes.
 
 ![LVL3Logging](https://github.com/Rogengell/DLS-Compulsory-Logging-Api/blob/main/Diagrams/Level%203%20Components%20diagram%20-%20Logging%20API.png)
 
@@ -50,16 +50,23 @@ The Monitoring View shows users the data they need. The Monitoring Controller ac
 
 ![LVL3Monitoring](https://github.com/Rogengell/DLS-Compulsory-Logging-Api/blob/main/Diagrams/Level%203%20Components%20diagram%20-%20Monitoring%20API.png)
 
-## **Code**
+## **Coding decisions**
 
-**RestAPI:**
+### **Entity Framework**
+
+Entity Framework is used for the communication to the Database and back. It is even used for setup of the Database and the migration in our DB
+
+### **RestAPI:**
+
 By using a rest API, we will be able to create a more modular, scalable and flexible Monitoring System that is easier to maintain and extend
 
-**Dependency Injection:**
+### **Dependency Injection:**
+
 Dependency injection helps organize our code by specifying which services can access other services they need to do their jobs. This makes our code more flexible, maintainable, and easier to test.
 
-**Nginx:**
-We are using Nginx, because it is a valuable tool for horizontal scaling in Docker environments, providing load balancing, performance optimization, and fault tolerance.
+### **Nginx:**
+
+We are using Nginx, because it is a valuable tool for horizontal scaling in Docker environments, it helps us so we are able to use the api's container outside docker. It's like a gateway to the api's
 
 ## **Setup Logging API** :rocket:
 
