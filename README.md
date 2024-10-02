@@ -78,5 +78,21 @@ After that you can run this command
 docker compose up
 ```
 
-after that you can tryout via swagger and input some loggings to the database
-for at do so open your preferred browser and type **localhost/swagger**
+When it is finish after round about 1 min, than you can tryout via swagger and input some loggings to the database.
+Todo so open your preferred browser and type **localhost/swagger**
+
+This is an example the json body how it would look before sending
+
+```
+{
+  "traceId": 2147483647,
+  "parentSpanId": 2147483647,
+  "loggingString": "string",
+  "time": "2024-10-02T08:40:28.161Z"
+}
+```
+
+**traceId:** This value cant be null, it represents the trace and it is the connection between the logging and tracing.
+**parentSpanId:** This value can be null, it combines Spans together if they are in the same logging process.
+**loggingString** This value can be null, it is the info message that will be stored in the database.
+**time** This value can be null, it represents the time of the user machine or of the server.
