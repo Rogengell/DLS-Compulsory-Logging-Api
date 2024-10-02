@@ -92,7 +92,10 @@ This is an example the json body how it would look before sending
 }
 ```
 
-- **traceId:** This value cant be null, it represents the trace and it is the connection between the logging and tracing.
-- **parentSpanId:** This value can be null, it combines Spans together if they are in the same logging process.
-- **loggingString:** This value can be null, it is the info message that will be stored in the database.
-- **time:** This value can be null, it represents the time of the user machine or of the server.
+**traceId:** This value cant be null, it represents the trace and it is the connection between the logging and tracing.
+
+**parentSpanId:** This value can be null, it combines Spans together if they are in the same logging process.
+
+**loggingString:** This value can be null, it is the info message that will be stored in the database.
+
+**time:** This value can be null, it represents the time of the user machine or of the server.
