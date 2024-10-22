@@ -5,22 +5,14 @@ pipeline {
         pollSCM('* * * * *')
     }
 
+    agent {
+        docker {
+            image 'mcr.microsoft.com/dotnet/sdk:8.0'
+        }
+    }
 
     stages {
-        stage('Install .NET SDK') {
-            steps {
-                script {
-                    sh '''
-                    sudo apt-get update &&
-                    sudo apt-get install -y wget apt-transport-https &&
-                    wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb &&
-                    sudo dpkg -i packages-microsoft-prod.deb &&
-                    sudo apt-get update &&
-                    sudo apt-get install -y dotnet-sdk-8.0
-                    '''
-                }
-            }
-        }
+     
         stage('Verify .NET Installation') {
             steps {
                 sh 'dotnet --version'
