@@ -1,20 +1,9 @@
 pipeline {
-    agent  {
-        docker {
-            image 'mcr.microsoft.com/dotnet/sdk:8.0'
-            args '-v /var/run/docker.sock:/var/run/docker.sock'
-        }
-    }
+    agent any
     triggers {
         pollSCM('* * * * *')
     }
     stages {
-     
-        stage('Verify .NET Installation') {
-            steps {
-                sh 'dotnet --version'
-            }
-        }
         stage('Build') {
             steps {
                 echo 'Building..'
