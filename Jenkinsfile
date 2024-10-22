@@ -1,15 +1,14 @@
 pipeline {
-    agent any
-
-    triggers {
-        pollSCM('* * * * *')
-    }
-
-    agent {
+    agent  {
         docker {
             image 'mcr.microsoft.com/dotnet/sdk:8.0'
         }
     }
+
+    triggers {
+        pollSCM('* * * * *')
+    }
+       
 
     stages {
      
